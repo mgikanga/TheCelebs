@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <title>SocialCeleb</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- Foundation CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+    <!-- Foundation CSS style sheet -->
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+.small-12{
+    margin: 2%;
+}
+
+    </style>
+</head>
+<body>
+
+        
+		<!-- Start of body below -->
+	
+    <div class="row main-links">
+        <div class="small-12 medium-4 columns">
+            <!-- <div class="title-box">
+            <h4 class="title-box-title">Image 1</h4>
+          </div> -->
+            <img src="https://maryblane.files.wordpress.com/2015/10/wpid-selena-gomez.jpg">
+            <div class="row main-links">
+                <div class="small-12 medium-12 columns">
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Selena Gomez Social Celeb Stats</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <!-- <div class="title-box">
+            <h4 class="title-box-title">Image 2</h4>
+          </div> -->
+            <img src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fpeopledotcom.files.wordpress.com%2F2016%2F08%2Fkaty-perry-440-7.jpg%3Fw%3D400&w=700&q=85">
+            <div class="row main-links">
+                <div class="small-12 medium-12 columns">
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Katy Perry Celeb Stats</a>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <!-- <div class="title-box">
+            <h4 class="title-box-title">Image 3</h4>
+          </div> -->
+            <img src="http://cashboxmagazine.com/wp-content/uploads/2018/04/justinbieber3_si-400x300.jpg">
+          
+            <div class="row main-links">
+                
+                <div class="small-12 medium-12 columns">
+                    <!-- Modal Trigger -->
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"> Justin Bieber Social Celeb Stats</button>
+                </div>
+             
+            </div>
+        </div>
+        </div>
+        
+
+
+        <div class="container">
+              
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+              
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <!-- <div class="modal-dialog"> -->
+                  
+                    <!-- Modal content-->
+                    <!-- <div class="modal-content"> -->
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Justin Beiber's Popularity</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p id="type"> Some text in the modal.</p>
+                        <p id="count"> Some text in the modal.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    
+                  <!-- </div> -->
+                </div>
+
+
+	
+    <script>
+    
+      function getCelebs() {
+    $.get("/api/celebs", function(data) {
+      var rowsToAdd = [];
+      for (var i = 0; i < data.length; i++) {
+        // rowsToAdd.push(createCelebRow(data[i]));
+        console.log(data[i])
+        console.log(data[i].name)
+
+      }
+    //   renderCelebList(rowsToAdd);
+    //   nameInput.val("");
+    });
+    $.get("/api/popularity", function(data) {
+      var rowsToAdd = [];
+      for (var i = 0; i < data.length; i++) {
+        // rowsToAdd.push(createCelebRow(data[i]));
+        console.log(data[i])
+        console.log(data[i].account_type)
+        console.log(data[i].count)
+        $("#type").text(data[i].account_type)
+       
+      }
+    //   renderCelebList(rowsToAdd);
+    //   nameInput.val("");
+   
+    });
+  }
+  getCelebs();
+    </script>
+</body>
+</html>
+
+
+Add CommentCollapse 
+Message Input
+
+Message @Ronaldo DeGuzman 
